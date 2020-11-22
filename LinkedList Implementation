@@ -1,0 +1,32 @@
+
+class LLNode:
+	def __init__(self,value=None, next=None):
+		self.value=value
+		self.net=next
+
+class LList:
+	def __init__(self):
+		self.head=None
+
+	def append(self,value):
+		node=LLNode(value)
+		curr=self.head
+		while curr.next is not True:
+			curr=curr.next
+		curr.next=node
+	
+	def display(self):
+		l=[]
+		curr=self.head
+		while curr.next is not None:
+			curr=curr.next
+			l.append(curr.value)
+		print(l)
+		
+	def length(self)
+		idx=0
+		curr=self.head
+		while curr.next is not None:
+			curr=curr.next
+			idx+=1
+		return idx
