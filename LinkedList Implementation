@@ -45,5 +45,18 @@ class LList:
 				break
 			curr=curr.next
 			idx+=1
-			
+
+	def delete(self,index):
+		if index > self.length():
+			raise Exception("Index out of range")
+		curr=self.head
+		idx=1
+		while curr.next:
+			prev=curr
+			curr=curr.next
+			if index==idx:
+				prev.next=curr.next
+			idx+=1
+
+
 
