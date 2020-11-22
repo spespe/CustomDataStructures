@@ -30,3 +30,20 @@ class LList:
 			curr=curr.next
 			idx+=1
 		return idx
+		
+	def insertAt(self, index, value):
+		if index > self.length():
+			raise Exception("Index out of range")
+		node=LLNode(value)
+		curr=self.head
+		idx=1
+		while True:
+			if index==idx:
+				nxt=curr.next.next
+				curr.next=node
+				node.next=nxt
+				break
+			curr=curr.next
+			idx+=1
+			
+
