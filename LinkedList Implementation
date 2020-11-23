@@ -59,4 +59,16 @@ class LList:
 			idx+=1
 
 
+	def reverse(self):
+		previous=None
+		current=self.head
+		following=current.next
+		while current:
+			current.next=previous
+			previous=current
+			current=following
+			if following:
+				following=following.next
+		self.head=previous
+
 
