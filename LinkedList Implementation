@@ -71,4 +71,16 @@ class LList:
 				following=following.next
 		self.head=previous
 
+	def get(self, index):
+		if index > self.length():
+			raise Exception("Index out of range. Max length: "+str(self.length()))
+			return
+		curr=self.head
+		idx=1
+		while curr.next:
+			curr=curr.next
+			if idx==index:
+				return curr.value
+			idx+=1
+
 
