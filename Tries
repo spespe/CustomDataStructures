@@ -1,5 +1,5 @@
 #TRIES
-classTNode:
+class TNode:
 	def __init__(self,elem):
 		self.elem=elem
 		self.children={}
