@@ -17,3 +17,13 @@ class Trie:
 			curr_node=curr_node.children[elem]
 		curr_node.isEnd=True
 
+	def exist(self,word):
+		if word=="&":
+			return True
+		curr_node=self.root
+		for elem in word:
+			if elem not in curr_node.children:
+				return False
+			curr_node=curr_node.children[elem]
+		return curr_node.isEnd
+
