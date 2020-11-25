@@ -4,7 +4,8 @@ class TNode:
 		self.elem=elem
 		self.children={}
 		self.isEnd=False
-	
+		self.counter=0
+
 class Trie:
 	def __init__(self):
 		self.root=TNode("&") #End of Trie
@@ -26,4 +27,23 @@ class Trie:
 				return False
 			curr_node=curr_node.children[elem]
 		return curr_node.isEnd
+		
+	def dfs(self, node, pfx):
+		if node.isEnd:
+			self.output.append((pfx + node.elem + node.counter))
+		
+		for sub in node.children.values():
+			print("\nChild: "+str(node.children))
+			self.dfs(child, pfx+node.elem) #Recursion
+			
+	def traverse(self, query):
+		self.output=[]
+		curr_node=self.root
+		for char in query:
+			if char in curr_node.children:
+				curr_node = curr_node.children[char]
+			else:
+				return []
+		self.dfs(curr_node, query[:-1])
+		return sorted(self.output, key=lambda y: y[1], reverse=True)
 
