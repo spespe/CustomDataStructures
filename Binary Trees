@@ -1,0 +1,8 @@
+#BINARY TREES
+class TreeNode:
+	def __init(self,key, value, left=None, right=None, parent=None):
+		self.key=key
+		self.value=value
+		self.leftC=left #left child
+		self.rightC=right # right child
+		self.parent=parent
